@@ -29,7 +29,9 @@ class ReportRequest extends FormRequest
             'shop_address' => 'required|string|min:3',
             'web_address' => 'required|string|min:3',
             'specifications' => 'required|max:255',
-            'description' => 'required|max:255'
+            'description' => 'required|max:255',
+            'latitude' => 'required|between:-87,90|numeric',
+            'longitude' => 'required|between:-180,180|numeric',
         ];
         if (request('reportImage')) {
             $images = count(request('reportImage'));
