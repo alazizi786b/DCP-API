@@ -1,4 +1,4 @@
-# DCP API
+# DCP API for GSMA
 ## License
 Copyright (c) 2019 Qualcomm Technologies, Inc.
 
@@ -31,14 +31,11 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 `mv .env.example .env`
 - Configure DB settings in your `.env` file
 - Run `php artisan key:generate` to generate application key.
-- Run `php artisan jwt:secret` to generate JWT secret key.
+- Run `php artisan passport:install` to generate Passport ClientID and Client Secrets.
 - Define `APP_URL` in `config/app.php` to your frontend application URL.
-- Run DB migrations by `php artisan migrate`
+- Run DB migrations with sample seeders `php artisan migrate --seed` or `php artisan migrate:refresh --seed`
 - Congrats, you're all set up & ready to go.
 
-### Optional Steps
-- Run DB migrations with sample seeders `php artisan migrate --seed` or `php artisan migrate:refresh --seed`
-- Run `php artisan setup:api {--wco}`
 
 ### WCO GSMA Configurations
 In order to configure WCO GSMA Database with your instance, you need to have the following set of variables.
@@ -46,15 +43,12 @@ In order to configure WCO GSMA Database with your instance, you need to have the
 - `WCO_ENCRYPTION_KEY`,
 - `WCO_AUTH_TOKEN`,
 - `WCO_AUTH_PASSWORD`,
-- `WCO_ORGANIZATION_ID`
-
-You can define these variables in `config/app.php`
-
-Moreover, to get data from WCO GSMA API, you also need to set few more variables in your `.env` file.
-
+- `WCO_ORGANIZATION_ID`,
 - `WCO_PORT_NAME`,
 - `WCO_COUNTRY`,
 - `WCO_PORT_TYPE` 
+
+You can define these variables in `config/app.php`
 
 ### AWS S3 Bucket Configurations
 
