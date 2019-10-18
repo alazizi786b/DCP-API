@@ -179,7 +179,6 @@ return [
 		 * Package Service Providers...
 		 */
 
-		Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
 		Maatwebsite\Excel\ExcelServiceProvider::class,
 		\Torann\GeoIP\GeoIPServiceProvider::class,
 
