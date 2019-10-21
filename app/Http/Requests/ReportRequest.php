@@ -24,17 +24,19 @@ class ReportRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'brand_name' => 'required|string|min:3',
-            'model_name' => 'required|string|min:3',
-            'shop_address' => 'required|string|min:3',
-            'web_address' => 'required|string|min:3',
+            'brand_name' => 'required|string',
+            'model_name' => 'required|string',
+            'shop_address' => 'required|string',
+            'web_address' => 'required|string',
             'specifications' => 'required|max:255',
-            'description' => 'required|max:255'
+            'description' => 'required|max:255',
+            'latitude' => 'required|between:-87,90|numeric',
+            'longitude' => 'required|between:-180,180|numeric',
         ];
         if (request('reportImage')) {
             $images = count(request('reportImage'));
             foreach (range(0, $images) as $index) {
-                $rules['reportImage.' . $index] = 'image|mimes:jpeg,bmp,png|max:2000';
+                $rules['reportImage.' . $index] = 'image|mimes:jpeg,bmp,png|max:5000';
             }
         }
         return $rules;
