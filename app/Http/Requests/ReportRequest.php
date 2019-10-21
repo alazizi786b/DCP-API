@@ -36,7 +36,7 @@ class ReportRequest extends FormRequest
         if (request('reportImage')) {
             $images = count(request('reportImage'));
             foreach (range(0, $images) as $index) {
-                $rules['reportImage.' . $index] = 'image|mimes:jpeg,bmp,png|max:2000';
+                $rules['reportImage.' . $index] = 'image|mimes:jpeg,bmp,png|max:5000';
             }
         }
         return $rules;
