@@ -24,10 +24,10 @@ class ReportRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'brand_name' => 'required|string|min:3',
-            'model_name' => 'required|string|min:3',
-            'shop_address' => 'required|string|min:3',
-            'web_address' => 'required|string|min:3',
+            'brand_name' => 'required|string',
+            'model_name' => 'required|string',
+            'shop_address' => 'required|string',
+            'web_address' => 'required|string',
             'specifications' => 'required|max:255',
             'description' => 'required|max:255',
             'latitude' => 'required|between:-87,90|numeric',
