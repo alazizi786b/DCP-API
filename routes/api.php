@@ -18,6 +18,8 @@ Route::group(['middleware' => 'localization'], function () {
 
             Route::post('lookup/{user_device}/{checking_method}', 'TACController@lookup');
 
+           // Route::get('datacsv', 'DataInExcelController@DataToCSV');
+
             Route::put('matched/{imei_number}', 'TACController@matched');
             Route::put('not-matched/{imei_number}', 'TACController@notMatched');
 
@@ -29,6 +31,7 @@ Route::group(['middleware' => 'localization'], function () {
 
             Route::get('profile/{id}/password', 'Profile\ProfileController@getPassword');
             Route::put('profile/{id}/password', 'Profile\ProfileController@editPassword');
+            Route::get('datacsv', 'DataInExcelController@csv_export');
 
             Route::group(['middleware' => 'superadmin'], function () {
 

@@ -2,18 +2,24 @@
 
 return [
 
-	'app_url' => '<YOUR_APP_URL>',
+	'app_url' => 'http://localhost',
 
 
 	/**
 	 * WCO API URL
 	 */
 
-	'wco_api_url'         => '<WCO_API_URL>',
-	'wco_encryption_key'  => '<WCO_ENCRYPTION_KEY>',
-	'wco_auth_token'      => '<WCO_AUTH_TOKEN>',
-	'wco_auth_password'   => '<WCO_AUTH_PASSWORD>',
-	'wco_organization_id' => '<WCO_ORGANIZATION_ID>',
+	'wco_api_url' => 'https://imeidb.gsma.com/services/rest/GetHandSetDetails',
+   'wco_encryption_key' => 'imeaesencryption',
+   'wco_auth_token' => 'ZqXBvdRLYRiAWCO',
+   'wco_auth_password' => 'uYSanQzqQVeSsLb',
+   'wco_organization_id' => '9071',
+   'wco_port_name' => 'Liverpool',
+   'wco_country' => 'United Kingdom',
+   'wco_port_type' => 'SEA',
+
+	
+
 
 	/*
 	|--------------------------------------------------------------------------

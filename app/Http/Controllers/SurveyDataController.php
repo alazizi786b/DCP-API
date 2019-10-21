@@ -94,7 +94,7 @@ class SurveyDataController extends Controller
     public function getReport()
     {
         $surveys = SurveyData::with('images', 'tac', 'tac.gsmaData', 'user')->paginate(100);
-
+ 
         return view('survey', compact('surveys'));
 
     }
