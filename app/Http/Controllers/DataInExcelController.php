@@ -15,10 +15,10 @@ class DataInExcelController extends Controller
     	return Excel::download(new CsvExport, 'sample.csv');
     }
 
-    public function export(){
+//     public function export(){
 
-    return Excel::download(new CsvExport, 'invoices.csv');
-}
+//     return Excel::download(new CsvExport, 'invoices.csv');
+// }
 
    
 

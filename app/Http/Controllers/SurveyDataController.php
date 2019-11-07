@@ -11,6 +11,7 @@ use App\Libraries\WCOApi;
 use App\SurveyData;
 use App\TAC;
 use Carbon\Carbon;
+use App\Storage;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\Console\Input\Input;
 use Symfony\Component\HttpFoundation\Response;
@@ -39,9 +40,10 @@ class SurveyDataController extends Controller
             if ($request->hasFile('reportImage')) {
                 //we'll use its ID
                 $survey = $this->createSurvey($request, $tac);
-
+                //dd($survey);
                 $this->createImage($request->reportImage, $survey);
-
+           //dd($this->createImage($request->reportImage, $survey));
+                //dd($request->reportImage);
                 $this->createActivity($tac);
 
                 return response()->json([
@@ -77,9 +79,19 @@ class SurveyDataController extends Controller
             foreach ($reportImage as $image) {
                 $name = uniqid() . '.' . $image->getClientOriginalExtension();
                 $image->move(public_path() . '/images/', $name);
-
+            // dd($image);
+                //dd(public_path().'/images');
                 $img = new Image();
-                $img->url = $name;
+
+                //$img->url = $name;
+                // $img->url = asset('/images/'.$name);
+                $img->url =  asset('/images/'.$name);
+                //dd($img->url);
+                 //$replace = array('[', ']','"',' ');
+              //  $img->url = str_replace(array('[', ']','"',' ') , array('-'), $imgUrl);
+                //dd($img->url);
+                //$img->url = public_path().'/images'.$name;
+               // dd($img->url);
                 $img->survey_id = $survey->id;
                 $img->save();
             }

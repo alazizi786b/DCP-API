@@ -14,3 +14,6 @@
 //Route::get('/', function () {
 //    return view('welcome');
 //});
+// Route::get('datacsv',);
+Route::get('data', 'GuzzleController@guxxle');
+ Route::get('dataincsv', 'DataInExcelController@csv_export');
